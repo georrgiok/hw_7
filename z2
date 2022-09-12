@@ -1,0 +1,23 @@
+// Задайте двумерный массив из целых чисел. 
+// Найдите среднее арифметическое элементов в каждом столбце.
+  int m = 5, n = 5;
+int [,]arr = new int[m,n];
+for (int i=0; i < m; i++) 
+{
+  for (int j=0; j < n; j++) 
+  {
+    arr[i,j] = new Random().Next(1, 100);
+    Console.Write(arr[i,j] + " ");
+  }
+  Console.WriteLine();
+}
+Console.WriteLine("поиск среднее арифметического чисел каждого столбца.");
+for (int i=0; i < n; i++) 
+{
+  double sumLine = 0;
+  for (int j=0; j < m; j++) 
+  {
+    sumLine += arr[j,i];
+  }
+  Console.WriteLine("Среднее арифметическое "+ (i+1) +"-ой строки: "+sumLine/m);
+}
